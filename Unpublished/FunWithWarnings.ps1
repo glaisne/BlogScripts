@@ -46,13 +46,13 @@ foreach ($line in $list -split "`n")
         #    Default {Write-host $char -NoNewline}
         #}
 
-        if ($([int]$char) -ge 9580 -or  $([int]$char) -le 9552)
+        if ($([int]$char) -le 9580 -and  $([int]$char) -ge 9552)
         {
-            Write-host -fore red $char -NoNewline
+            Write-host -fore cyan $char -NoNewline
         }
         else
         {
-            write-host -fore darkred $char -NoNewline
+            write-host -fore red $char -NoNewline
         }
     }
     write-host ""
