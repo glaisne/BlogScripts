@@ -101,6 +101,7 @@ foreach ($SUser in $SourceUsers)
         else
         {
             $Test.Result = 'Fail'
+            Results.Add($Test)
         }
     }
 }
