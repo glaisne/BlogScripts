@@ -53,16 +53,18 @@ Class Test
     [string] $Test
     [string] $Target
     [String] $Result
+    [String] $Note
 
     # Constructors
     Test() {}
 
-    Test($SubjectType, $Subject, $Test, $Result)
+    Test($SubjectType, $Subject, $Test, $Result, $Note = [string]::Empty)
     {
         $this.SubjectType = $SubjectType
         $this.Subject     = $Subject
         $this.Test        = $Test
         $this.Result      = $Result
+        $this.Note        = $Note
     }
 }
 
@@ -101,6 +103,7 @@ foreach ($SUser in $SourceUsers)
         else
         {
             $Test.Result = 'Fail'
+            $Test.Note   = 'user does not exist in target domain.'
             Results.Add($Test)
         }
     }
